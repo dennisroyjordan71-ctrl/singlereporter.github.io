@@ -1,3 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singlereporter - Partnervermittlung auf neuem Niveau</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(218, 165, 32, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+        }
+
+        .brand-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #DAA520 0%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-btn {
+            background: linear-gradient(135deg, #DAA520 0%, #FFD700 100%);
+            color: #000;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
         .contact-btn:hover {
             transform: translateY(-2px);
@@ -538,18 +619,6 @@
                     Eilperstr. 119<br>
                     58091 Hagen
                 </p>
-
-                <h2>EU-Streitschlichtung</h2>
-                <p>
-                    Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
-                    <a href="https://ec.europa.eu/consumers/odr/" target="_blank" style="color: #DAA520;">https://ec.europa.eu/consumers/odr/</a><br>
-                    Unsere E-Mail-Adresse finden Sie oben im Impressum.
-                </p>
-
-                <h2>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
-                <p>
-                    Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-                </p>
             </div>
         </section>
     </div>
@@ -561,47 +630,134 @@
                 
                 <h1>Datenschutzerklärung</h1>
                 
-                <h2>1. Datenschutz auf einen Blick</h2>
-                <h3>Allgemeine Hinweise</h3>
+                <h2>1. Verantwortliche Stelle</h2>
                 <p>
-                    Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, 
-                    wenn Sie diese Website besuchen oder unsere Dienstleistungen in Anspruch nehmen. Personenbezogene Daten sind alle Daten, 
-                    mit denen Sie persönlich identifiziert werden können.
-                </p>
-
-                <h3>Verantwortliche Stelle</h3>
-                <p>
-                    Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br><br>
                     Dennis Roy Jordan<br>
                     Eilperstr. 119<br>
                     58091 Hagen<br>
-                    E-Mail: dennisroyjordan71@gmail.com<br>
-                    Telefon: 0157 809 397 30
+                    E-Mail: dennisroyjordan71@gmail.com
                 </p>
 
-                <h2>2. Datenerfassung auf dieser Website</h2>
-                <h3>Welche Daten erheben wir?</h3>
-                <p>Wir erheben folgende Daten von Ihnen:</p>
+                <h2>2. Erhobene Daten</h2>
+                <p>Wir erheben folgende Daten:</p>
                 <ul>
-                    <li><strong>Kontaktdaten:</strong> Name, E-Mail-Adresse, Telefonnummer</li>
-                    <li><strong>Interview-Videos:</strong> Aufnahmen von persönlichen Video-Interviews</li>
-                    <li><strong>Bewerbervideos:</strong> Selbst erstellte Video-Bewerbungen</li>
-                    <li><strong>Persönliche Informationen:</strong> Alter, Wohnort, Interessen (im Rahmen der Partnervermittlung)</li>
+                    <li>Kontaktdaten: Name, E-Mail, Telefon</li>
+                    <li>Interview-Videos</li>
+                    <li>Bewerbervideos</li>
                 </ul>
 
-                <h3>Wofür nutzen wir Ihre Daten?</h3>
-                <p>Ihre Daten werden ausschließlich für folgende Zwecke verwendet:</p>
+                <h2>3. Verwendungszweck</h2>
+                <p>Ihre Daten werden ausschließlich für die Partnervermittlung, Veröffentlichung auf Social Media (nach Einwilligung) und Kontaktaufnahme verwendet.</p>
+
+                <h2>4. Ihre Rechte</h2>
+                <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Widerruf Ihrer Einwilligung. Kontakt: dennisroyjordan71@gmail.com</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="agb" class="page-content">
+        <section class="legal-page">
+            <div class="container">
+                <a href="#" onclick="showPage('home'); return false;" class="back-btn">← Zurück zur Startseite</a>
+                
+                <h1>Allgemeine Geschäftsbedingungen (AGB)</h1>
+                
+                <h2>1. Geltungsbereich</h2>
+                <p>Diese AGB gelten für alle Verträge zwischen Dennis Roy Jordan (Singlereporter) und Kunden.</p>
+
+                <h2>2. Leistungen</h2>
+                <h3>Single-Interview (60€)</h3>
                 <ul>
-                    <li>Durchführung der Partnervermittlung</li>
-                    <li>Veröffentlichung Ihres Interview-Videos auf unseren Social-Media-Kanälen (TikTok, Instagram, Facebook, YouTube)</li>
-                    <li>Weiterleitung von Bewerbervideos an passende Singles</li>
-                    <li>Kontaktaufnahme und Kommunikation mit Ihnen</li>
+                    <li>Professionelles Video-Interview</li>
+                    <li>Veröffentlichung auf Social Media</li>
+                    <li>Aktive Vermittlung bis zum Match</li>
                 </ul>
 
-                <h3>Wo werden Ihre Daten gespeichert?</h3>
-                <p>Ihre Daten werden an folgenden Orten gespeichert:</p>
+                <h3>Bewerbervideo (5€)</h3>
                 <ul>
-                    <li>Auf unserem lokalen Computer (verschlüsselt und passwortgeschützt)</li>
-                    <li>In unserem E-Mail-Postfach bei Google (Gmail)</li>
-                    <li>Auf Social-Media-Plattformen (TikTok, Instagram, Facebook, YouTube) nach Ihrer ausdrücklichen Einwilligung</li>
+                    <li>Prüfung des Videos</li>
+                    <li>Weiterleitung an ausgewählten Single</li>
                 </ul>
+
+                <h2>3. Zahlung</h2>
+                <p>Zahlung erfolgt im Voraus per Überweisung.</p>
+
+                <h2>4. Widerrufsrecht</h2>
+                <p>14 Tage Widerrufsrecht. Erlischt bei bereits durchgeführtem Interview oder Veröffentlichung.</p>
+
+                <h2>5. Haftung</h2>
+                <p>Keine Erfolgsgarantie für Partnervermittlung. Haftung nur bei Vorsatz oder grober Fahrlässigkeit.</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="einwilligung" class="page-content">
+        <section class="legal-page">
+            <div class="container">
+                <a href="#" onclick="showPage('home'); return false;" class="back-btn">← Zurück zur Startseite</a>
+                
+                <h1>Einwilligungserklärung für Selfie-Videos</h1>
+                <p style="font-style: italic; color: #DAA520; font-size: 1.1rem; margin-bottom: 30px;">
+                    Exklusiv für Singlevermittlung
+                </p>
+                
+                <h2>Zweck</h2>
+                <p>
+                    Das Selfie-Video wird ausschließlich für die Vermittlung an den von Ihnen ausgewählten Single genutzt. 
+                    Eine öffentliche Veröffentlichung auf Social Media oder anderen Plattformen findet nicht statt.
+                </p>
+
+                <h2>Einwilligung</h2>
+                <p>Ich erkläre mich damit einverstanden, dass mein Selfie-Video:</p>
+                <ul>
+                    <li>von den Betreibern der Partnervermittlung angeschaut wird,</li>
+                    <li>ausschließlich an die von mir gewählte Person weitergeleitet wird,</li>
+                    <li>nach Abschluss der Vermittlung oder auf Wunsch gelöscht wird.</li>
+                </ul>
+
+                <h2>Datenschutz</h2>
+                <ul>
+                    <li>Das Video wird vertraulich behandelt.</li>
+                    <li>Es wird nicht ohne meine Zustimmung an Dritte weitergegeben.</li>
+                    <li>Ich kann meine Einwilligung jederzeit widerrufen.</li>
+                </ul>
+
+                <h2>Unterschrift</h2>
+                <p style="margin-top: 30px;">
+                    <strong>Ort, Datum:</strong> ________________________<br><br>
+                    <strong>Unterschrift:</strong> ________________________
+                </p>
+
+                <p style="margin-top: 40px; padding: 20px; background: #1a1a1a; border-left: 4px solid #DAA520; border-radius: 8px;">
+                    <strong>Hinweis:</strong> Diese Einwilligungserklärung können Sie ausdrucken, ausfüllen und uns per E-Mail oder Post zusenden.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#" onclick="showPage('impressum'); return false;">Impressum</a>
+                <a href="#" onclick="showPage('datenschutz'); return false;">Datenschutz</a>
+                <a href="#" onclick="showPage('agb'); return false;">AGB</a>
+                <a href="#" onclick="showPage('einwilligung'); return false;">Einwilligung Bewerbervideo</a>
+            </div>
+            <p style="color: #888; margin-top: 15px;">&copy; 2024 Singlereporter - Alle Rechte vorbehalten</p>
+            <p style="color: #888; margin-top: 10px; font-size: 0.9rem;">Partnervermittlung auf einem ganz neuen Niveau</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            document.getElementById(pageId).classList.add('active');
+            
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
