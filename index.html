@@ -1,465 +1,4 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Singlereporter - Partnervermittlung auf neuem Niveau</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #000;
-            color: #fff;
-            line-height: 1.6;
-        }
-
-        .page-content {
-            display: none;
-        }
-
-        .page-content.active {
-            display: block;
-        }
-
-        header {
-            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
-            padding: 20px 0;
-            box-shadow: 0 2px 20px rgba(218, 165, 32, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            cursor: pointer;
-        }
-
-        .logo {
-            width: 60px;
-            height: 60px;
-        }
-
-        .brand-name {
-            font-size: 1.8rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #DAA520 0%, #FFD700 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .contact-btn {
-            background: linear-gradient(135deg, #DAA520 0%, #FFD700 100%);
-            color: #000;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .contact-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(218, 165, 32, 0.5);
-        }
-
-        .hero {
-            padding: 100px 0;
-            text-align: center;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #DAA520 0%, #FFD700 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .tagline {
-            font-size: 1.5rem;
-            color: #DAA520;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            color: #ccc;
-        }
-
-        .about {
-            padding: 80px 0;
-            background: #0a0a0a;
-        }
-
-        .about h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 50px;
-            color: #DAA520;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .about-card {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-            padding: 30px;
-            border-radius: 15px;
-            border: 2px solid #DAA520;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .about-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(218, 165, 32, 0.3);
-        }
-
-        .about-card h3 {
-            color: #FFD700;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        .pricing {
-            padding: 80px 0;
-            background: #000;
-        }
-
-        .pricing h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 50px;
-            color: #DAA520;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .price-card {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-            padding: 40px;
-            border-radius: 20px;
-            border: 3px solid #DAA520;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .price-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(218, 165, 32, 0.4);
-        }
-
-        .price-card h3 {
-            color: #FFD700;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .price {
-            font-size: 3rem;
-            color: #DAA520;
-            font-weight: bold;
-            margin: 20px 0;
-        }
-
-        .price-card ul {
-            list-style: none;
-            margin: 30px 0;
-            text-align: left;
-        }
-
-        .price-card li {
-            padding: 10px 0;
-            border-bottom: 1px solid #333;
-            color: #ccc;
-        }
-
-        .price-card li:before {
-            content: "✓ ";
-            color: #DAA520;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        .contact {
-            padding: 80px 0;
-            background: #0a0a0a;
-        }
-
-        .contact h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 50px;
-            color: #DAA520;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #DAA520 0%, #FFD700 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group label {
-            color: #DAA520;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 12px;
-            border: 2px solid #DAA520;
-            background: #1a1a1a;
-            color: #fff;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, #DAA520 0%, #FFD700 100%);
-            color: #000;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(218, 165, 32, 0.5);
-        }
-
-        .social {
-            padding: 60px 0;
-            background: #000;
-            text-align: center;
-        }
-
-        .social h2 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: #DAA520;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #DAA520 0%, #FFD700 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: #000;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .social-link:hover {
-            transform: scale(1.1);
-            box-shadow: 0 5px 20px rgba(218, 165, 32, 0.5);
-        }
-
-        .social-link svg {
-            width: 30px;
-            height: 30px;
-        }
-
-        .legal-page {
-            padding: 100px 0 80px;
-            background: #0a0a0a;
-            min-height: 100vh;
-        }
-
-        .legal-page h1 {
-            font-size: 2.5rem;
-            color: #DAA520;
-            margin-bottom: 40px;
-        }
-
-        .legal-page h2 {
-            font-size: 1.8rem;
-            color: #FFD700;
-            margin-top: 40px;
-            margin-bottom: 20px;
-        }
-
-        .legal-page h3 {
-            font-size: 1.4rem;
-            color: #DAA520;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-
-        .legal-page p, .legal-page li {
-            color: #ccc;
-            margin-bottom: 15px;
-            line-height: 1.8;
-        }
-
-        .legal-page ul {
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-
-        .back-btn {
-            display: inline-block;
-            margin-bottom: 30px;
-            color: #DAA520;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .back-btn:hover {
-            color: #FFD700;
-        }
-
-        footer {
-            background: #0a0a0a;
-            padding: 30px 0;
-            text-align: center;
-            color: #888;
-            border-top: 2px solid #DAA520;
-        }
-
-        .footer-links {
-            margin-bottom: 15px;
-        }
-
-        .footer-links a {
-            color: #DAA520;
-            text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #FFD700;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .tagline {
-                font-size: 1.2rem;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo-section" onclick="showPage('home')">
-                    <img src="logo.png" alt="Singlereporter Logo" class="logo">
-                    <div class="brand-name">Singlereporter</div>
-                </div>
-                <a href="#kontakt" class="contact-btn" onclick="showPage('home')">Jetzt anmelden</a>
-            </div>
-        </div>
-    </header>
+</header>
 
     <div id="home" class="page-content active">
         <section class="hero">
@@ -589,6 +128,63 @@
                     </a>
                 </div>
                 <p style="margin-top: 20px; color: #888;">Hier findest du unsere neuesten Interview-Videos und Dating-Tipps!</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="ueber-uns" class="page-content">
+        <section class="legal-page">
+            <div class="container">
+                <a href="#" onclick="showPage('home'); return false;" class="back-btn">← Zurück zur Startseite</a>
+                
+                <h1>Herzlich willkommen bei den SingleReportern!</h1>
+                
+                <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 30px;">
+                    Die SingleReporter wurden 2019 in Hagen von einem kleinen, kreativen Team ins Leben gerufen. 
+                    Nach einer coronabedingten Pause starten wir heute neu – mit frischem Konzept, neuer Energie 
+                    und der gleichen Leidenschaft für echte Begegnungen.
+                </p>
+
+                <h2 style="color: #FFD700; font-size: 2rem; margin-top: 40px;">
+                    Wir sind eine Partnervermittlung auf einem ganz neuen Niveau.
+                </h2>
+
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 20px;">
+                    Wir verabschieden uns von anonymen Steckbriefen, bearbeiteten Profilbildern, hohen monatlichen 
+                    Beiträgen – und vor allem von Fakes. Stattdessen setzen wir auf Echtheit, Persönlichkeit und Vertrauen.
+                </p>
+
+                <h2>Unser Konzept</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    Unsere Singles werden von uns auf eine besondere Art und Weise interviewt. So kannst du dir bereits 
+                    vorab ein authentisches erstes Bild machen – ehrlich, ungestellt und persönlich.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 15px;">
+                    Durch diese individuelle und persönliche Präsentation heben wir uns bewusst von herkömmlichen 
+                    Partnervermittlungen ab.
+                </p>
+
+                <h2>Das Besondere an uns</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    Wir sind für dich greifbar, persönlich und vor Ort. Jeder unserer Reporter arbeitet in seiner Region, 
+                    um echte Zweisamkeit zu vermitteln – mit Herz, Engagement und Menschenkenntnis.
+                </p>
+
+                <div style="background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); padding: 30px; border-radius: 15px; border: 2px solid #DAA520; margin: 40px 0; text-align: center;">
+                    <h2 style="color: #FFD700; font-size: 1.8rem; margin-bottom: 0;">
+                        Ehrlichkeit und Seriosität werden bei uns großgeschrieben.
+                    </h2>
+                </div>
+
+                <p style="font-size: 1.2rem; text-align: center; color: #DAA520; font-weight: bold; margin-top: 40px;">
+                    Wir wünschen dir viel Erfolg in der Liebe und ganz viel Freude auf unserer Seite! 💛
+                </p>
+
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#kontakt" onclick="showPage('home'); return false;" class="contact-btn" style="display: inline-block;">
+                        Jetzt kennenlernen
+                    </a>
+                </div>
             </div>
         </section>
     </div>
@@ -738,6 +334,7 @@
     <footer>
         <div class="container">
             <div class="footer-links">
+                <a href="#" onclick="showPage('ueber-uns'); return false;">Über uns</a>
                 <a href="#" onclick="showPage('impressum'); return false;">Impressum</a>
                 <a href="#" onclick="showPage('datenschutz'); return false;">Datenschutz</a>
                 <a href="#" onclick="showPage('agb'); return false;">AGB</a>
