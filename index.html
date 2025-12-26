@@ -695,4 +695,116 @@
                 <h2>3. Verwendungszweck</h2>
                 <p>Ihre Daten werden ausschließlich für die Partnervermittlung, Veröffentlichung auf Social Media (nach Einwilligung) und Kontaktaufnahme verwendet.</p>
 
-                <h2>4. Ihre Rechte</h2
+                <h2>4. Ihre Rechte</h2>
+                <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Widerruf Ihrer Einwilligung. Kontakt: info.singlereporter@gmx.de</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="agb" class="page-content">
+        <section class="legal-page">
+            <div class="container">
+                <a href="#" onclick="showPage('home'); return false;" class="back-btn">← Zurück zur Startseite</a>
+                
+                <h1>Allgemeine Geschäftsbedingungen (AGB)</h1>
+                
+                <h2>1. Geltungsbereich</h2>
+                <p>Diese AGB gelten für alle Verträge zwischen Dennis Roy Jordan (Singlereporter) und Kunden.</p>
+
+                <h2>2. Leistungen</h2>
+                <h3>Single-Interview (60€)</h3>
+                <ul>
+                    <li>Professionelles Video-Interview</li>
+                    <li>Veröffentlichung auf Social Media</li>
+                    <li>Aktive Vermittlung bis zum Match</li>
+                </ul>
+
+                <h3>Bewerbervideo (5€)</h3>
+                <ul>
+                    <li>Prüfung des Videos</li>
+                    <li>Weiterleitung an ausgewählten Single</li>
+                </ul>
+
+                <h2>3. Zahlung</h2>
+                <p>Zahlung erfolgt im Voraus per Überweisung.</p>
+
+                <h2>4. Widerrufsrecht</h2>
+                <p>14 Tage Widerrufsrecht. Erlischt bei bereits durchgeführtem Interview oder Veröffentlichung.</p>
+
+                <h2>5. Haftung</h2>
+                <p>Keine Erfolgsgarantie für Partnervermittlung. Haftung nur bei Vorsatz oder grober Fahrlässigkeit.</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="einwilligung" class="page-content">
+        <section class="legal-page">
+            <div class="container">
+                <a href="#" onclick="showPage('home'); return false;" class="back-btn">← Zurück zur Startseite</a>
+                
+                <h1>Einwilligungserklärung für Selfie-Videos</h1>
+                <p style="font-style: italic; color: #DAA520; font-size: 1.1rem; margin-bottom: 30px;">
+                    Exklusiv für Singlevermittlung
+                </p>
+                
+                <h2>Zweck</h2>
+                <p>
+                    Das Selfie-Video wird ausschließlich für die Vermittlung an den von Ihnen ausgewählten Single genutzt. 
+                    Eine öffentliche Veröffentlichung auf Social Media oder anderen Plattformen findet nicht statt.
+                </p>
+
+                <h2>Einwilligung</h2>
+                <p>Ich erkläre mich damit einverstanden, dass mein Selfie-Video:</p>
+                <ul>
+                    <li>von den Betreibern der Partnervermittlung angeschaut wird,</li>
+                    <li>ausschließlich an die von mir gewählte Person weitergeleitet wird,</li>
+                    <li>nach Abschluss der Vermittlung oder auf Wunsch gelöscht wird.</li>
+                </ul>
+
+                <h2>Datenschutz</h2>
+                <ul>
+                    <li>Das Video wird vertraulich behandelt.</li>
+                    <li>Es wird nicht ohne meine Zustimmung an Dritte weitergegeben.</li>
+                    <li>Ich kann meine Einwilligung jederzeit widerrufen.</li>
+                </ul>
+
+                <h2>Unterschrift</h2>
+                <p style="margin-top: 30px;">
+                    <strong>Ort, Datum:</strong> ________________________<br><br>
+                    <strong>Unterschrift:</strong> ________________________
+                </p>
+
+                <p style="margin-top: 40px; padding: 20px; background: #1a1a1a; border-left: 4px solid #DAA520; border-radius: 8px;">
+                    <strong>Hinweis:</strong> Diese Einwilligungserklärung können Sie ausdrucken, ausfüllen und uns per E-Mail oder Post zusenden.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#" onclick="showPage('ueber-uns'); return false;">Über uns</a>
+                <a href="#" onclick="showPage('impressum'); return false;">Impressum</a>
+                <a href="#" onclick="showPage('datenschutz'); return false;">Datenschutz</a>
+                <a href="#" onclick="showPage('agb'); return false;">AGB</a>
+                <a href="#" onclick="showPage('einwilligung'); return false;">Einwilligung Bewerbervideo</a>
+            </div>
+            <p style="color: #888; margin-top: 15px;">&copy; 2024 Singlereporter - Alle Rechte vorbehalten</p>
+            <p style="color: #888; margin-top: 10px; font-size: 0.9rem;">Partnervermittlung auf einem ganz neuen Niveau</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            document.getElementById(pageId).classList.add('active');
+            
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
