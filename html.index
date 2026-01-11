@@ -1,0 +1,83 @@
+<!-- ========================= -->
+<!-- DEIN ORIGINAL CODE START -->
+<!-- ========================= -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Singlereporter - Partnervermittlung auf neuem Niveau">
+<link rel="icon" href="logo.png">
+<title>Singlereporter</title>
+
+<style>
+/* --- dein kompletter vorhandener CSS bleibt unverändert --- */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',sans-serif;background:#000;color:#fff;line-height:1.6;overflow-x:hidden}
+/* ... (alles weitere CSS aus deiner Originaldatei bleibt exakt gleich) ... */
+.legal{padding:100px 0 80px;background:#0a0a0a;min-height:100vh}
+.legal h1{font-size:2.5rem;color:#DAA520;margin-bottom:40px}
+.legal h2{font-size:1.8rem;color:#FFD700;margin-top:40px;margin-bottom:20px}
+.legal h3{font-size:1.4rem;color:#DAA520;margin-top:30px;margin-bottom:15px}
+.legal p,.legal li{color:#ccc;margin-bottom:15px;line-height:1.8}
+.back{display:inline-block;margin-bottom:30px;color:#DAA520;text-decoration:none;font-weight:bold}
+footer{background:#0a0a0a;padding:30px 0;text-align:center;color:#888;border-top:2px solid #DAA520}
+.footer-links{margin-bottom:15px}
+.footer-links a{color:#DAA520;text-decoration:none;margin:0 15px}
+</style>
+</head>
+
+<body>
+
+<!-- ⚠️ HIER LÄUFT DEIN ORIGINALER BODY INHALT WEITER -->
+<!-- Header, Home, Sections, Kontakt, Social usw. bleiben unverändert -->
+<!-- Ich kürze das hier nur zur Übersicht ein -->
+
+<!-- ========================= -->
+<!-- IMPRESSUM (NEU EINGEFÜGT) -->
+<!-- ========================= -->
+
+<div id="impressum" class="page">
+<section class="legal">
+<div class="container">
+
+<a href="#" class="back" onclick="showPage('home');return false">← Zurück</a>
+
+<h1>Impressum</h1>
+
+<p><strong>Angaben gemäß § 5 TMG</strong></p>
+
+<p>
+Dennis Roy Jordan<br>
+c/o Flexdienst-#20082<br>
+Kurt-Schumacher-Straße 76<br>
+67663 Kaiserslautern<br>
+Deutschland
+</p>
+
+<h3>Kontakt</h3>
+<p>
+E-Mail:
+<a href="mailto:info.singlereporter@gmx.de" style="color:#DAA520">
+info.singlereporter@gmx.de
+</a>
+</p>
+
+</div>
+</section>
+</div>
+
+<!-- ========================= -->
+<!-- FOOTER (LINK AKTIVIERT)  -->
+<!-- ========================= -->
+
+<footer>
+  <div class="footer-links">
+    <a href="#" onclick="showPage('impressum');return false">Impressum</a>
+  </div>
+  <p>© 2026 Singlereporter</p>
+</footer>
+
+</body>
+</html>
