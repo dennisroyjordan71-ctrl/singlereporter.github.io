@@ -17,8 +17,9 @@ body{font-family:'Segoe UI',sans-serif;background:#000;color:#fff;line-height:1.
 #top{position:fixed;bottom:30px;right:30px;width:50px;height:50px;background:linear-gradient(135deg,#DAA520,#FFD700);border:none;border-radius:50%;color:#000;font-size:1.5rem;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:1000;box-shadow:0 5px 20px rgba(218,165,32,.3);transition:transform .3s}
 #top:hover{transform:translateY(-5px)}
 #top.show{display:flex}
-#wa{position:fixed;bottom:90px;right:30px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:1000;box-shadow:0 5px 20px rgba(37,211,102,.3);text-decoration:none;font-size:2rem;transition:transform .3s}
-#wa:hover{transform:scale(1.1)}
+#phone{position:fixed;bottom:90px;right:30px;width:60px;height:60px;background:linear-gradient(135deg,#DAA520,#FFD700);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:1000;box-shadow:0 5px 20px rgba(218,165,32,.3);text-decoration:none;font-size:2rem;transition:transform .3s;color:#000}
+#phone:hover{transform:scale(1.1)}
+
 #age-popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.95);display:none;justify-content:center;align-items:center;z-index:10000}
 #age-popup.show{display:flex}
 .age-box{background:linear-gradient(135deg,#1a1a1a,#0a0a0a);padding:40px;border-radius:20px;border:3px solid #DAA520;text-align:center;max-width:500px;box-shadow:0 20px 60px rgba(218,165,32,.5)}
@@ -119,8 +120,8 @@ footer{background:#0a0a0a;padding:30px 0;text-align:center;color:#888;border-top
 .nav.active{left:0}
 .burger{display:flex}
 .price-grid{grid-template-columns:1fr}
-#top,#wa{right:20px;width:45px;height:45px}
-#wa{bottom:80px}
+#top,#phone{right:20px;width:45px;height:45px}
+#phone{bottom:80px}
 }
 </style>
 </head>
@@ -140,7 +141,7 @@ footer{background:#0a0a0a;padding:30px 0;text-align:center;color:#888;border-top
 
 <div id="loader"><div class="spin"></div></div>
 <button id="top">↑</button>
-<a href="https://wa.me/4915780939730" id="wa">💬</a>
+<a href="tel:+4915780939730" id="phone">📞</a>
 
 <header id="hdr">
 <div class="container">
@@ -256,26 +257,32 @@ footer{background:#0a0a0a;padding:30px 0;text-align:center;color:#888;border-top
 <div class="price-card scroll-anim">
 <h3>Single-Interview</h3>
 <p class="price">60€</p>
+<h4 style="color:#FFD700;font-size:1.3rem;margin:20px 0 15px;position:relative;z-index:1">Das ist enthalten:</h4>
 <ul>
-<li>Professionelles Video-Interview</li>
-<li>Veröffentlichung auf all unseren Social-Media-Kanälen</li>
-<li>Aktive Vermittlung bis zum Match</li>
+<li>Persönliches Video-Interview (ca. 10 Minuten)</li>
+<li>Professioneller Videoschnitt</li>
+<li>Veröffentlichung auf TikTok, Instagram, YouTube, Facebook</li>
+<li>Aktive Vermittlung durch uns</li>
+<li>Dein Profil bleibt online, bis du vermittelt wurdest</li>
+<li>Persönliche Betreuung bis zum Match</li>
 <li>Keine versteckten Kosten</li>
-<li>Dein Profil bleibt aktiv, bis du vermittelt wurdest</li>
+<li>Keine monatlichen Gebühren</li>
 </ul>
-<a href="mailto:info.singlereporter@gmx.de?subject=Interview%20buchen" class="btn">Jetzt Interview buchen</a>
+<a href="mailto:info.singlereporter@gmx.de?subject=Interview%20buchen" class="btn" style="margin-top:20px">Jetzt Interview buchen</a>
 </div>
 <div class="price-card scroll-anim">
 <h3>Bewerbervideo</h3>
 <p class="price">5€</p>
+<h4 style="color:#FFD700;font-size:1.3rem;margin:20px 0 15px;position:relative;z-index:1">So funktioniert's:</h4>
 <ul>
-<li>Kurzes Selfie-Video erstellen</li>
-<li>Prüfung auf Echtheit und Qualität</li>
-<li>Weiterleitung an den passenden Single</li>
-<li>Faire Chance auf ein Match</li>
+<li>Du filmst ein kurzes Selfie-Video (1-2 Min)</li>
+<li>Wir prüfen Echtheit und Qualität</li>
+<li>Wir leiten es an den passenden Single weiter</li>
+<li>Bei gegenseitigem Interesse stellen wir den Kontakt her</li>
 <li>Keine Fake-Profile möglich</li>
+<li>Faire Chance auf ein Match</li>
 </ul>
-<a href="mailto:info.singlereporter@gmx.de?subject=Bewerbervideo%20senden" class="btn">Bewerbervideo senden</a>
+<a href="mailto:info.singlereporter@gmx.de?subject=Bewerbervideo%20senden" class="btn" style="margin-top:20px">Bewerbervideo senden</a>
 </div>
 </div>
 </div>
@@ -340,14 +347,19 @@ footer{background:#0a0a0a;padding:30px 0;text-align:center;color:#888;border-top
 <section class="legal">
 <div class="container">
 <a href="#" onclick="showPage('home');return false" class="back">← Zurück zur Startseite</a>
-<h1>Herzlich willkommen bei den SingleReportern!</h1>
-<h2 style="color:#FFD700;font-size:2rem;margin-top:40px;margin-bottom:30px">Wir sind eine Partnervermittlung auf einem ganz neuen Niveau.</h2>
-<p style="font-size:1.1rem;line-height:1.8">Wir verabschieden uns von anonymen Steckbriefen, bearbeiteten Profilbildern, hohen monatlichen Beiträgen – und vor allem von Fakes. Stattdessen setzen wir auf Echtheit, Persönlichkeit und Vertrauen.</p>
+<h1>Über Singlereporter</h1>
+<h2 style="color:#FFD700;font-size:2rem;margin-top:40px;margin-bottom:30px">Hinter Singlereporter steht Dennis Roy Jordan aus Hagen.</h2>
+<p style="font-size:1.1rem;line-height:1.8">Seit Jahren führe ich Straßeninterviews und habe dabei <strong>50.000 Menschen auf YouTube</strong> begeistert.</p>
+<p style="font-size:1.1rem;line-height:1.8;margin-top:20px">Jetzt bringe ich diese Erfahrung in die Partnervermittlung: Authentisch, echt, ohne Fakes. Ich begleite dich persönlich, bis du dein Match gefunden hast.</p>
 <h2>Unser Konzept</h2>
 <p style="font-size:1.1rem;line-height:1.8">Unsere Singles werden von uns auf eine besondere Art und Weise interviewt. So kannst du dir bereits vorab ein authentisches erstes Bild machen – ehrlich, ungestellt und persönlich.</p>
 <p style="font-size:1.1rem;line-height:1.8;margin-top:15px">Durch diese individuelle und persönliche Präsentation heben wir uns bewusst von herkömmlichen Partnervermittlungen ab.</p>
 <h2>Das Besondere an uns</h2>
 <p style="font-size:1.1rem;line-height:1.8">Wir sind für dich greifbar, persönlich und vor Ort. Jeder unserer Reporter arbeitet in seiner Region, um echte Zweisamkeit zu vermitteln – mit Herz, Engagement und Menschenkenntnis.</p>
+<div style="background:linear-gradient(135deg,#1a1a1a,#0a0a0a);padding:30px;border-radius:15px;border:2px solid #DAA520;margin:40px 0;text-align:center">
+<h2 style="color:#FFD700;font-size:1.8rem;margin-bottom:20px">Warum ich das mache?</h2>
+<p style="color:#ccc;font-size:1.1rem;line-height:1.8">Weil ich an echte Begegnungen glaube und Menschen zusammenbringen möchte – nicht Algorithmen.</p>
+</div>
 <div style="background:linear-gradient(135deg,#1a1a1a,#0a0a0a);padding:30px;border-radius:15px;border:2px solid #DAA520;margin:40px 0;text-align:center">
 <h2 style="color:#FFD700;font-size:1.8rem;margin-bottom:0">Ehrlichkeit und Seriosität werden bei uns großgeschrieben.</h2>
 </div>
